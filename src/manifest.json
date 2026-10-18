@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "foxkit",
+  "version": "0.1.0",
+  "description": "Personal toolbox for Firefox.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "foxkit@asif",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
+  },
+  "permissions": [
+    "menus",
+    "downloads",
+    "notifications",
+    "nativeMessaging"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.pinterest.com/*",
+        "https://*.pinterest.co.uk/*",
+        "https://*.pinterest.ca/*",
+        "https://*.pinterest.com.au/*",
+        "https://*.pinterest.de/*",
+        "https://*.pinterest.fr/*",
+        "https://*.pinterest.es/*",
+        "https://*.pinterest.it/*",
+        "https://*.pinterest.jp/*",
+        "https://*.pinterest.com.mx/*"
+      ],
+      "js": [
+        "features/pinterest/content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}
