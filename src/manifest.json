@@ -9,7 +9,7 @@
       "strict_min_version": "140.0",
       "data_collection_permissions": {
         "required": [
-          "none"
+          "browsingActivity"
         ]
       }
     }
@@ -18,12 +18,20 @@
     "menus",
     "downloads",
     "notifications",
-    "nativeMessaging"
+    "nativeMessaging",
+    "identity",
+    "storage",
+    "webRequest",
+    "webRequestBlocking"
   ],
   "host_permissions": [
     "http://*/*",
     "https://*/*"
   ],
+  "action": {
+    "default_title": "Trakt scrobbler",
+    "default_popup": "features/trakt/popup.html"
+  },
   "background": {
     "scripts": [
       "background.js"
@@ -48,6 +56,15 @@
         "features/pinterest/content.js"
       ],
       "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.netflix.com/*"
+      ],
+      "js": [
+        "features/trakt/netflix.js"
+      ],
+      "run_at": "document_idle"
     }
   ]
 }

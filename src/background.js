@@ -1,8 +1,9 @@
 // Each feature registers its own listeners; add new ones here.
 import * as mpv from "./features/mpv/background.js";
 import * as pinterest from "./features/pinterest/background.js";
+import * as trakt from "./features/trakt/background.js";
 
-const features = [pinterest, mpv];
+const features = [pinterest, mpv, trakt];
 
 for (const feature of features) feature.init();
 
