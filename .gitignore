@@ -1,3 +1,9 @@
 node_modules/
 dist/
 .web-extension-id
+.amo-upload-uuid
+# makepkg
+/src/foxkit/
+/pkg/
+/foxkit/
+*.pkg.tar.zst
